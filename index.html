@@ -199,5 +199,30 @@
 </script>
 
 <script src="script.js"></script>
+
+<div id="cookie-banner" style="position:fixed;bottom:0;left:0;width:100%;background:#f4f4f4;padding:15px;border-top:1px solid #ccc;z-index:9999;">
+  <p>Wij gebruiken cookies om je ervaring te verbeteren en om onze partners te ondersteunen. 
+  <a href="cookies.html">Lees ons cookiebeleid</a>.</p>
+  <button onclick="acceptCookies()">Accepteren</button>
+  <button onclick="declineCookies()">Weigeren</button>
+</div>
+
+<script>
+function acceptCookies() {
+  document.getElementById('cookie-banner').style.display = 'none';
+  localStorage.setItem('cookiesAccepted', 'true');
+  // Hier kun je scripts van Awin of Analytics activeren
+}
+function declineCookies() {
+  document.getElementById('cookie-banner').style.display = 'none';
+  localStorage.setItem('cookiesAccepted', 'false');
+}
+window.onload = function() {
+  if(localStorage.getItem('cookiesAccepted')) {
+    document.getElementById('cookie-banner').style.display = 'none';
+  }
+}
+</script>
+
 </body>
 </html>
