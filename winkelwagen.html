@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Winkelwagen – Amourbay</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Calibri, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8fdf8;
+    }
+
+    header {
+      background-color: #f1f8e9;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.6em;
+    }
+
+    nav a {
+      color: #27ae60;
+      text-decoration: none;
+      font-size: 0.9em;
+    }
+
+    main {
+      max-width: 600px;
+      margin: 1rem auto;
+      background-color: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    #cart { margin-bottom: 20px; }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f9f9f9;
+      padding: 12px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      flex-wrap: wrap; /* voorkomt overlap op mobiel */
+    }
+
+    .cart-item span {
+      flex: 1;
+      min-width: 150px;
+      margin-bottom: 5px;
+    }
+
+    .remove-btn {
+      background-color: #c62828;
+      color: #fff;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.9em;
+    }
+    .remove-btn:hover { background-color: #b71c1c; }
+
+    #checkoutButton, #clearCart {
+      width: 100%; /* volle breedte op mobiel */
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1em;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    #checkoutButton {
+      background-color: #27ae60;
+      color: white;
+    }
+    #checkoutButton:hover { background-color: #2ecc71; }
+
+    #clearCart {
+      background-color: #999;
+      color: white;
+    }
+    #clearCart:hover { background-color: #777; }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #f1f8e9;
+      font-size: 0.9em;
+    }
+
+    /* 📱 Mobielvriendelijke verbeteringen */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.3em;
+      }
+
+      .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .remove-btn {
+        width: 100%;
+        margin-top: 8px;
+      }
+
+      nav a {
+        display: block;
+        margin-top: 5px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>🛒 Jouw Winkelwagen</h1>
+    <nav>
+      <a href="../index.html">← Terug naar homepage</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hoofdcontainer voor winkelwagen -->
+    <div id="cart"></div>
+
+    <p id="totalPrice"></p>
+    <span id="cart-subtotal" style="display:none;"></span>
+
+    <button id="clearCart" onclick="clearCart()">Winkelwagen leegmaken</button>
+    <button id="checkoutButton" onclick="checkout()" style="display:none;">Afrekenen</button>
+  </main>
+
+  <footer>
+    <p>© 2025 Amourbay</p>
+    <p>Deze site werkt samen met Awin voor affiliate marketing.</p>
+    <a href="../privacy.html">Privacy</a> |
+  <a href="../disclaimer.html">Disclaimer</a> |
+  <a href="../contact.html">Contact</a> |
+  <a href="../over.html">Over ons</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
